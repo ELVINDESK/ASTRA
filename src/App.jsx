@@ -5,7 +5,7 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import BookingModal from "./components/BookingModal";
+
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
@@ -18,11 +18,6 @@ function App() {
       <Services />
       <Contact />
       <Footer />
-
-      <BookingModal
-        isOpen={openModal}
-        onClose={() => setOpenModal(false)}
-      />
     </>
   );
 }
