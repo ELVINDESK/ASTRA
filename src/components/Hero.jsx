@@ -24,7 +24,7 @@ export default function Hero() {
           </button>
 
           <button className="px-8 py-3 border border-gray-500 hover:border-blue-500 rounded-xl font-semibold transition">
-            Ver Projetos
+            Teste a ASTRA - BETA
           </button>
         </div>
       </div>

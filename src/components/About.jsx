@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section id="sobre" className="py-24 bg-white">
+    <section id="ASTRA Ia" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center px-6">
 
         <motion.img
@@ -31,7 +31,7 @@ export default function About() {
 
           <p className="text-gray-600 mt-6 leading-7">
             <div className="text-blue-600 text-lg font-bold">ASTRA</div>
-            <div className="bg-black p-5 text-gray-300">
+            <div className="bg-black p-5 text-gray-300 rounded-2xl">
               é uma empresa de tecnologia dedicada a transformar negócios por meio de soluções digitais inovadoras. Com uma equipe de especialistas apaixonados por tecnologia, oferecemos serviços personalizados que atendem às necessidades específicas de cada cliente. Desde o desenvolvimento de sites modernos e responsivos até a criação de sistemas sob medida e bots inteligentes, estamos comprometidos em impulsionar o sucesso dos nossos clientes no mundo digital. Nossa missão é fornecer soluções tecnológicas que não apenas atendam, mas superem as expectativas, ajudando nossos clientes a alcançar novos patamares de eficiência e crescimento.
             </div>
           </p>

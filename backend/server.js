@@ -1,40 +1,49 @@
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import OpenAI from "openai";
-
-dotenv.config();
+const express = require("express");
+const cors = require("cors");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
-// conecta na IA
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
-app.post("/chat", async (req, res) => {
+app.post("/chat", (req, res) => {
   const { message } = req.body;
 
-  try {
-    const response = await openai.chat.completions.create({
-      model: "gpt-4o-mini",
-      messages: [
-        { role: "system", content: "Você é uma IA simples de site, responda de forma curta e direta." },
-        { role: "user", content: message }
-      ],
-    });
+  const texto = message.toLowerCase();
 
-    res.json({
-      reply: response.choices[0].message.content
-    });
+  let reply = "";
 
-  } catch (error) {
-    res.status(500).json({ error: "Erro na IA" });
+  if (texto.includes("preço") || texto.includes("valor")) {
+    reply = "Nossos projetos começam a partir de R$499.";
   }
+
+  else if (texto.includes("site")) {
+    reply = "Criamos sites modernos, rápidos e profissionais. Me fale seu projeto.";
+  }
+
+  else if (texto.includes("loja")) {
+    reply = "Também criamos lojas virtuais completas.";
+  }
+
+  else if (texto.includes("prazo")) {
+    reply = "Normalmente entre 5 a 10 dias úteis.";
+  }
+
+  else if (texto.includes("contato")) {
+    reply = "Pode nos chamar no WhatsApp para atendimento rápido.";
+  }
+
+  else if (texto.includes("oi") || texto.includes("olá")) {
+    reply = "Olá! Sou a Astra. Como posso ajudar você hoje?";
+  }
+
+  else {
+    reply = "Entendi 😊 Pode me explicar melhor para eu te ajudar?";
+  }
+
+  res.json({ reply });
 });
 
 app.listen(3001, () => {
-  console.log("Servidor rodando na porta 3001");
+  console.log("Astra raiz online 🚀");
 });

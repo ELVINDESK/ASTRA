@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { FaTooth } from "react-icons/fa";
+import ChatIA from "../pages/ChatIA";
 
 export default function Header({ onOpen }) {
+  const [abrirChat, setAbrirChat] = useState(false);
+
   return (
     <header className="w-full fixed top-0 z-50 bg-blue-950 backdrop-blur- shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
@@ -9,17 +13,21 @@ export default function Header({ onOpen }) {
         </h1>
 
         <nav className="hidden md:flex gap-8 font-medium p-4 text-blue-600">
-          <div className=" hover:bg-blue-500 transition rounded-full px-5 hover: p-2 "><a href="#">ASTRA Ia</a></div>
-          <div className=" hover:bg-blue-500 transition rounded-full px-5 hover: p-2 "><a href="#">Serviços</a></div>
-          <div className=" hover:bg-blue-500 transition rounded-full px-5 hover: p-2 "><a href="#">Contato</a></div>
+          <div className=" hover:bg-blue-500 transition rounded-full px-5 hover: p-2 "><a href="#ASTRA Ia">ASTRA Ia</a></div>
+          <div className=" hover:bg-blue-500 transition rounded-full px-5 hover: p-2 "><a href="#servicos">Serviços</a></div>
+          <div className=" hover:bg-blue-500 transition rounded-full px-5 hover: p-2 "><a href="#contato">Contato</a></div>
         </nav>
 
         <button
-          onClick={onOpen}
+          onClick={() => setAbrirChat(true)}
           className="bg-blue-700 text-white px-5 py-2 rounded-full hover:bg-blue-500 transition"
         >
           Converse com ASTRA
         </button>
+
+        {abrirChat && (
+        <ChatIA fechar={() => setAbrirChat(false)} />
+      )}
       </div>
     </header>
   );

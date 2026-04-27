@@ -5,6 +5,9 @@ import About from "./components/About";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ChatIA from "./pages/ChatIA";
 
 
 function App() {
@@ -18,6 +21,14 @@ function App() {
       <Services />
       <Contact />
       <Footer />
+
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/astra" element={<ChatIA />} />
+      </Routes>
+    </BrowserRouter>
+    
     </>
   );
 }

@@ -1,53 +1,70 @@
 import { useState } from "react";
 
-export default function ChatIA() {
+function ChatIA({ fechar }) {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
   async function sendMessage() {
-    const userMessage = input;
-
-    setMessages((prev) => [...prev, { role: "user", text: userMessage }]);
-
-    setInput("");
-
     const res = await fetch("http://localhost:3001/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ message: userMessage })
+      body: JSON.stringify({
+        message: input
+      })
     });
 
     const data = await res.json();
 
     setMessages((prev) => [
       ...prev,
-      { role: "ai", text: data.reply }
+      { user: input },
+      { bot: data.reply }
     ]);
+
+    setInput("");
   }
 
   return (
-    <div style={{ maxWidth: 500, margin: "0 auto" }}>
-      <h2>Minha IA</h2>
+    <div className="border-2 border-blue-600 fixed bottom-5 right-5 bg-white p-5 rounded-xl shadow-xl w-80">
 
-      <div>
-        {messages.map((msg, i) => (
-          <p key={i}>
-            <b>{msg.role === "user" ? "Você" : "IA"}:</b> {msg.text}
-          </p>
-        ))}
+      {/* TOPO */}
+      <div className="flex justify-between items-center mb-4">
+        <h2 className="font-bold text-blue-600 bg-gray-200 p-2 rounded-full">Astra IA</h2>
+
+        <button
+          onClick={fechar}
+          className="bg-red-500 text-white font-bold text-xl p-1 rounded-full hover:bg-red-400 transition"
+        >
+          ×
+        </button>
       </div>
 
+      {/* MENSAGENS */}
+      {messages.map((msg, i) => (
+        <div key={i}>
+          {msg.user && <p><b>Você:</b> {msg.user}</p>}
+          {msg.bot && <p><b>Astra:</b> {msg.bot}</p>}
+        </div>
+      ))}
+
+      {/* INPUT */}
       <input
         value={input}
         onChange={(e) => setInput(e.target.value)}
-        placeholder="Digite algo..."
+        placeholder="Digite..."
+        className="border-2 border-blue-600 p-2 w-full mt-3 rounded"
       />
 
-      <button onClick={sendMessage}>
-        Enviar
+      <button
+        onClick={sendMessage}
+        className="bg-blue-600 text-white w-full mt-2 p-2 rounded"
+      >
+        Enviar a ASTRA
       </button>
     </div>
   );
 }
+
+export default ChatIA;
