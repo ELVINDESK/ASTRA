@@ -5,7 +5,7 @@ function ChatIA({ fechar }) {
   const [messages, setMessages] = useState([]);
 
   async function sendMessage() {
-    const res = await fetch("http://localhost:3001/chat", {
+    const res = await fetch("https://astra-backend-u7jq.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
