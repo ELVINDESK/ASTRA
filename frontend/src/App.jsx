@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ChatIA from "./pages/ChatIA";
+import ChatIA from "./pages/AstraChat";
 
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/astra" element={<ChatIA />} />
+        <Route path="/astra" element={<AstraChat />} />
       </Routes>
     </BrowserRouter>
     
