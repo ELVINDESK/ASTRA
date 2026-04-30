@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ChatIA from "./pages/AstraChat";
+import AstraChat from "./pages/AstraChat";
 
 
 function App() {
