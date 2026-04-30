@@ -33,7 +33,7 @@ export default function BookingModal({ isOpen, onClose }) {
                     <input placeholder="Nome"
                         className="w-full border p-3 rounded-xl"
                         onChange={(e) => setForm({ ...form, nome: e.target.value })}
-                    />
+                    />w
 
                     <input placeholder="Telefone"
                         className="w-full border p-3 rounded-xl"

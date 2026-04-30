@@ -15,7 +15,7 @@ import {
 const services = [
   {
     icon: <FaBolt />,
-    title: "Criação de Bots",
+    title: "Criação de Bots para Discord",
     text: "Automatize tarefas e melhore a eficiência do seu negócio com bots personalizados."
   },
   {
@@ -75,6 +75,15 @@ export default function Services() {
             </motion.div>
           ))}
         </div>
+      </div>
+      <div className="bg-blue-100 p-8 rounded-2xl text-center max-w-4xl mx-auto mt-16">
+        <h3>Conheça Nosso bot para discord</h3>
+        <p className="text-gray-600 mt-3 leading-7">
+          Nosso bot para Discord é a solução perfeita para automatizar tarefas, melhorar a eficiência e criar uma experiência personalizada para sua comunidade. Com recursos avançados e fácil integração, nosso bot é a escolha ideal para levar seu servidor ao próximo nível.
+        </p>
+        <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl font-semibold transition mt-5">
+          Teste Agora
+        </button>
       </div>
     </section>
   );

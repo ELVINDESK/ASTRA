@@ -6,7 +6,7 @@ export default function Header({ onOpen }) {
   const [abrirChat, setAbrirChat] = useState(false);
 
   return (
-    <header className="w-full fixed top-0 z-50 bg-blue-950 backdrop-blur- shadow-md">
+    <header className="w-full fixed top-0 z-50 bg-black backdrop-blur- shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
         <h1 className="text-2xl font-bold text-blue-700 flex items-center gap-2">
           ASTRA

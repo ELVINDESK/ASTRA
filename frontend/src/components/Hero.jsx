@@ -2,11 +2,11 @@ export default function Hero() {
   return (
     <section
       className="w-full min-h-screen bg-cover bg-center bg-no-repeat text-white flex items-center justify-center px-6"
-      style={{ backgroundImage: "url('/bg.gif')" }}
+      style={{ backgroundImage: "url('https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMHd4dHJzeXdmbTdwbjZ1YTZ1ODR3NGQ5MDFqZG00YzdncHloMGMzeiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/zTMRcvdM6FP6WHbl7U/giphy.gif')" }}
     >
       <div className="bg-black/60 p-8 rounded-2xl text-center max-w-4xl">
         <span className="inline-block px-4 py-2 mb-6 text-sm font-medium bg-blue-600/20 text-blue-400 rounded-full border border-blue-500/30">
-          Soluções modernas com ASTRA
+          Soluções modernas com ASTRA 
         </span>
 
         <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
